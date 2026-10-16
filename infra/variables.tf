@@ -18,5 +18,5 @@ variable "operator_cidr" {
 variable "image_tag" {
   description = "Image tag to run on the instance"
   type        = string
-  default     = "c1b601b"
+  default     = "c3d656b"
 }

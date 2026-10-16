@@ -45,3 +45,9 @@ infra/.terraform/
 infra/*.tfstate
 infra/*.tfstate.*
 infra/tfplan
+
+# Terraform artifacts anywhere in the repo
+*.tfstate
+*.tfstate.*
+*.tfplan
+**/.terraform/

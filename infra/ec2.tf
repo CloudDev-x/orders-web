@@ -75,11 +75,12 @@ resource "aws_iam_instance_profile" "web" {
 }
 
 resource "aws_instance" "web" {
-  ami                    = data.aws_ami.al2023.id
-  instance_type          = "t3.micro"
-  subnet_id              = data.aws_subnets.default.ids[0]
-  vpc_security_group_ids = [aws_security_group.web.id]
-  iam_instance_profile   = aws_iam_instance_profile.web.name
+  ami                         = data.aws_ami.al2023.id
+  instance_type               = "t3.micro"
+  subnet_id                   = data.aws_subnets.default.ids[0]
+  vpc_security_group_ids      = [aws_security_group.web.id]
+  iam_instance_profile        = aws_iam_instance_profile.web.name
+  user_data_replace_on_change = true
 
   # Require IMDSv2 so a compromised app can't steal the role via the old metadata endpoint
   metadata_options {
