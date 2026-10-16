@@ -2,7 +2,7 @@
 resource "aws_iam_openid_connect_provider" "github" {
   url             = "https://token.actions.githubusercontent.com"
   client_id_list  = ["sts.amazonaws.com"]
-  thumbprint_list = ["ffffffffffffffffffffffffffffffffffffffff"]
+  thumbprint_list = ["06d927fecd0a84aeba28aad1d808139470fe95c3"]
 }
 
 # Role that only this repo's main branch can assume
